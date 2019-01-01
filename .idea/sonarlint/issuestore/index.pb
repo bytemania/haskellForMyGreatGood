@@ -1,11 +1,0 @@
-
-8
-Setup.hs,e/2/e27367873b65e03edd60d624d93eeafb1e4ada9a
-7
-Baby.hs,7/d/7d321c648c6cffd6f53280465c0ebff6e482da1f
-8
-Types.hs,1/8/184fb1e7a8aea1a9a52f95f14af05dac19883fe6
-<
-Recursion.hs,6/c/6c9368d2398d6d46e0ae2ec3068f004ec75401c2
-6
-HOF.hs,5/7/572ea8336a45dc4b84ab2a622223266560cf9c62
