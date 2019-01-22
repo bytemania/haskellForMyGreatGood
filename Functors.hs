@@ -5,6 +5,7 @@ import Data.List
 import Control.Applicative
 import Data.Tuple
 import Data.Monoid
+import qualified Data.Foldable as F
 
 main1 :: IO ()
 main1 = do
@@ -83,4 +84,21 @@ lengthCompare x y = (length x `compare` length y) `mappend` (x `compare` y)
 lengthCompare'' :: String -> String -> Ordering
 lengthCompare'' x y = (length x `compare` length y) `mappend` (vowels x `compare` vowels y) `mappend` (x `compare` y)
     where vowels = length . filter (`elem` "aeiou")
+
+data Tree a = Empty | Node a (Tree a) (Tree a) deriving (Show, Read, Eq)
+
+instance F.Foldable Tree where
+  foldMap f Empty = mempty
+  foldMap f (Node a l r) = F.foldMap f l `mappend` f a `mappend` F.foldMap f r
+
+testTree :: Tree Int
+testTree = Node 5
+            (Node 3
+              (Node 1 Empty Empty)
+              (Node 6 Empty Empty))
+            (Node 9
+              (Node 8 Empty Empty)
+              (Node 10 Empty Empty))
+
+
 
